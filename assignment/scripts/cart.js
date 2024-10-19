@@ -3,6 +3,7 @@ console.log('***** Cart Functions *****');
 // We want to see how you are testing your code!!!
 
 let basket = [];
+console.log('Global basket/cart var is empty:', basket);
 
 function addItem(item) {
     if (item) {
@@ -11,10 +12,17 @@ function addItem(item) {
     }
     return false;
 }
-console.log('addItem() function to add to basket array', addItem('Running Shoes'));
-console.log('Basket now contains:', basket);
+console.log('Running addItem(\'Running Shoes\'):');
+addItem('Running Shoes');
+console.log('Basket is now:', basket);
 
-
+function listItems() {
+    for (const item of basket) {
+        console.log(item);
+    }
+}
+console.log('Running listItems() gives us:');
+listItems();
 
 
 
