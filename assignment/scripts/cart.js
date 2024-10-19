@@ -3,7 +3,6 @@ console.log('***** Cart Functions *****');
 // We want to see how you are testing your code!!!
 
 let basket = [];
-console.log('Global basket/cart var is empty:', basket);
 
 function addItem(item) {
     if (item) {
@@ -12,19 +11,17 @@ function addItem(item) {
     }
     return false;
 }
-console.log('Running addItem(\'Running Shoes\'):');
-addItem('Running Shoes');
-console.log('Basket is now:', basket);
+console.log(`Basket is (expect empty array):`, basket);
+console.log(`Adding shoes (expect true):`, addItem('Running Shoes'));
+console.log(`Basket is now:`, basket);
 
 function listItems() {
     for (const item of basket) {
         console.log(item);
     }
 }
-console.log('Running listItems() gives us:');
+console.log(`Running listItems() outside of console.log() gives us:`);
 listItems();
-
-
 
 
 
