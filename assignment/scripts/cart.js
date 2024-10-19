@@ -36,7 +36,17 @@ console.log(`Calling empty() outside of console.log():`);
 empty();
 console.log(`Basket is now (expect empty array):`, basket);
 
+console.log('***** Stretch Goals *****');
 
+const maxItems = 5;
+
+function isFull() {
+    if (basket.length < maxItems) {
+        return false;
+    }
+    return true;
+}
+console.log(`Calling isFull() (expect false)`, isFull());
 
 // DO NOT MODIFY
 // Used for automated testing
