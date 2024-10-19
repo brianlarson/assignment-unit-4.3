@@ -12,7 +12,7 @@ function addItem(item) {
     return false;
 }
 console.log(`Basket is (expect empty array):`, basket);
-console.log(`Adding shoes (expect true):`, addItem('Running Shoes'));
+console.log(`Calling addItem('Running Shoes') (expect true):`, addItem('Running Shoes'));
 console.log(`Basket is now:`, basket);
 
 function listItems() {
@@ -20,10 +20,21 @@ function listItems() {
         console.log(item);
     }
 }
-console.log(`Running listItems() outside of console.log() gives us:`);
+console.log(`Calling listItems() outside of console.log() gives us:`);
 listItems();
 
+console.log(`Adding socks to basket:`)
+addItem(`Socks`);
+console.log(`Basket is now:`, basket);
 
+function empty() {
+    for (let i = 0; i <= basket.length; i++) {
+        basket.pop();
+    }
+}
+console.log(`Calling empty() outside of console.log():`);
+empty();
+console.log(`Basket is now (expect empty array):`, basket);
 
 
 
