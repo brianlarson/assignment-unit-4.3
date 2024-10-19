@@ -10,7 +10,7 @@ function addItem(item) {
         basket.push(item);
         return true;
     }
-    console.log(`Basket is full!`);
+    console.log(`Basket is now full!`);
     return false;
 }
 console.log(`Basket is (expect empty array):`, basket);
@@ -48,16 +48,16 @@ function isFull() {
 }
 console.log(`Calling isFull() on empty basket (expect false)`, isFull());
 
-console.log(`Running addItem() six times with various items`, isFull());
+console.log(`Running addItem() six times with various items which is greater than maxItems (expect false)`, isFull());
 
 addItem(`Tights`);
 addItem(`Gloves`);
 addItem(`Jacket`);
 addItem(`Sunglasses`);
 addItem(`Watch`);
-addItem(`T-Shirt`);
+addItem(`T-Shirt`); // this one triggers the full message and returns false since it's over the max amount of items
 
-console.log(`Basket is now (expect list of 5 items instead of 6 since we're full):`, basket);
+console.log(`Basket is now (expect list of 5 items instead of 6 since we're full!):`, basket);
 
 console.log(`Calling isFull() on filled basket (expect true)`, isFull());
 
