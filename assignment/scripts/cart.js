@@ -3,12 +3,14 @@ console.log('***** Cart Functions *****');
 // We want to see how you are testing your code!!!
 
 let basket = [];
+const maxItems = 5;
 
 function addItem(item) {
-    if (item) {
+    if (item && !isFull()) {
         basket.push(item);
         return true;
     }
+    console.log(`Basket is full!`);
     return false;
 }
 console.log(`Basket is (expect empty array):`, basket);
@@ -38,15 +40,26 @@ console.log(`Basket is now (expect empty array):`, basket);
 
 console.log('***** Stretch Goals *****');
 
-const maxItems = 5;
-
 function isFull() {
     if (basket.length < maxItems) {
         return false;
     }
     return true;
 }
-console.log(`Calling isFull() (expect false)`, isFull());
+console.log(`Calling isFull() on empty basket (expect false)`, isFull());
+
+console.log(`Running addItem() six times with various items`, isFull());
+
+addItem(`Tights`);
+addItem(`Gloves`);
+addItem(`Jacket`);
+addItem(`Sunglasses`);
+addItem(`Watch`);
+addItem(`T-Shirt`);
+
+console.log(`Basket is now (expect list of 5 items instead of 6 since we're full):`, basket);
+
+console.log(`Calling isFull() on filled basket (expect true)`, isFull());
 
 // DO NOT MODIFY
 // Used for automated testing
