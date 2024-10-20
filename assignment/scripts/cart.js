@@ -33,8 +33,9 @@ function empty() {
     for (let i = 0; i <= basket.length; i++) {
         basket.pop();
     }
+    return true;
 }
-console.log(`Calling empty() outside of console.log():`);
+console.log(`Calling empty() to remove all items from basket`, empty());
 empty();
 console.log(`Basket is now (expect empty array):`, basket);
 
@@ -60,6 +61,21 @@ addItem(`T-Shirt`); // this one triggers the full message and returns false sinc
 console.log(`Basket is now (expect list of 5 items instead of 6 since we're full!):`, basket);
 
 console.log(`Calling isFull() on filled basket (expect true)`, isFull());
+
+function removeItem(item) {
+    let itemIndex = basket.indexOf(item);
+    let result = null;
+    if (itemIndex >= 0) {
+        result = basket.splice(itemIndex, 1)[0];
+        return result;
+    }
+    return result;
+}
+
+console.log(`Running removeItem('Sunglasses') and return removed item if found (expect Sunglasses)`, removeItem('Sunglasses'));
+
+console.log(`Basket without Sunglasses is now:`, basket);
+
 
 // DO NOT MODIFY
 // Used for automated testing
