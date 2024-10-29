@@ -30,7 +30,7 @@ addItem(`Socks`);
 console.log(`Basket is now:`, basket);
 
 function empty() {
-    for (let i = 0; i <= basket.length; i++) {
+    for (let i = 0; basket.length; i++) {
         basket.pop();
     }
     return true;
